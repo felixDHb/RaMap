@@ -1,0 +1,11 @@
+MgO_steel_SPS_preox_Mapping_Large_01:
+
+	Wavenumber range: 160,1400
+	PL threshold: 0
+	SNR threshold: 3
+
+Mapping_Large_02:
+
+	Wavenumber range: 160,1400
+	PL threshold: 0.87
+	SNR threshold: 3
