@@ -4,7 +4,7 @@ Workflow for constructing phase maps from Raman spectroscopy data.
  Language: Python
 
 For detailed usage instructions, see the [documentation](documentation.md).
-Examples are available in the [tutorial](docs/tutorial.md).
+Examples are available in the [tutorial](tutorial.md).
 ```
 ## Requirements
 Python >= 3.11 
