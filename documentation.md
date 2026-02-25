@@ -5,7 +5,7 @@ This project was created to analyze Raman mapping data and automatically generat
 ## Requirements
 Python >= 3.11
 
-Package requirements are listed in _requirements.txt_.
+Package requirements are listed in [requirements](requirements.txt).
 
 The required packages can be installed by
 
