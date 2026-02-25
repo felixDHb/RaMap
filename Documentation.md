@@ -1,4 +1,18 @@
 # Documentation for RaMap
+## Motivation
+This project was created to analyze Raman mapping data and automatically generate phase mappings.
+
+## Requirements
+Python >= 3.11
+
+Package requirements are listed in _requirements.txt_.
+
+The required packages can be installed by
+
+```
+pip install -r src/requirements.txt
+```
+
 ## Raman data
 ### Input Data Format Raman mapping
 
