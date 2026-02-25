@@ -3,7 +3,7 @@ Workflow for constructing phase maps from Raman spectroscopy data.
  Author: Felix Drechsler (Felix.Drechsler@physik.tu-freiberg.de)
  Language: Python
 
-For detailed usage instructions, see the [documentation](docs/documentation.md).
+For detailed usage instructions, see the [documentation](documentation.md).
 Examples are available in the [tutorial](docs/tutorial.md).
 ```
 ## Requirements
