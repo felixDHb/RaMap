@@ -85,7 +85,7 @@ The expected data structure is as follows:
 		   path_results = data/
        
 
-	3. Run the script
+3. Run the script
 
 		   python3 RaMap.py
 
