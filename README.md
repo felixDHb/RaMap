@@ -1,25 +1,26 @@
 # RaMap
 Workflow for constructing phase maps from Raman spectroscopy data.
+
  Author: Felix Drechsler (Felix.Drechsler@physik.tu-freiberg.de)
+ 
  Language: Python
 
 For detailed usage instructions, see the [documentation](documentation.md).
 Examples are available in the [tutorial](tutorial.md).
-```
+
 ## Requirements
 Python >= 3.11 
  
-_Package requirements are listed in 'requirements.txt'_
+_Package requirements are listed in [requirements](requirements.txt)
 
 The required packages can be installed by
 ```sh
 pip install -r src/requirements.txt
 ```
 
-## Usage
-### Getting started
+## Getting started
 1. Place your Raman `.csv` or `.txt` files in the `data/` directory before running the workflow.
-2. Add necessary components to the `RaMap.py` script 
+2. Add necessary components to the [`RaMap.py`](RaMap.py) script 
 
 	a) Path to the Raman mapping file
 
@@ -54,10 +55,6 @@ pip install -r src/requirements.txt
       2. Update "plot color" with a color string (e.g., "red") for plotting.
       3. Optionally, fill "chemical formula" with the chemical formula of the phase.
       4. Add additional references by creating new keys ("ref2", "ref3", …) following the same format.
-   
-      The corresponding Raman spectrum from the directory `ref1_path` is stored in:
-  	  - **ref_shifts**: wavenumbers  
-      - **ref_spectrum**: Raman intensities
         
       These values are automatically loaded when the script runs.
 
@@ -66,7 +63,7 @@ pip install -r src/requirements.txt
 		   path_results = data/
        
 
-	3. Run the script
+3. Run the script
 
 		   python3 RaMap.py
 
