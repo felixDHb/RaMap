@@ -29,19 +29,15 @@ from pybaselines.whittaker import iasls
 #################################################################################################################################################################################
 
 # Path to Raman mapping file (CSV or TXT)
-#map_file = "C:/Users/ITP/Documents/TUBAF/Promotion/Data/Raman_Mapping_SPS_spinels/2025-11-17_MgO_steel_SPS_mapping_large1/MgO_steel_SPS_preox_Mapping_Large_01.csv"
-map_file = "C:/Users/ITP/Documents/TUBAF/Promotion/Data/Raman_Mapping_SPS_spinels/2025-11-24_MgO_steel_SPS_mapping_large2/Mapping_Large_02.csv"
+
+map_file = "data/Raman_mapping.<ext>"
 
 # Path to reference spectra files (CSV or TXT)
-hematite = "C:/Users/ITP/Documents/TUBAF/Promotion/Data/Oxides_references_Julia/2025-09-26_Hematite_referencepowder/Hematite_01_0001.txt"
-magnesiumferrite = "C:/Users/ITP/Documents/TUBAF/Promotion/Data/Oxides_references_Julia/2025-07-07_spinel_ref/MgFe2O4-1100-alt1.csv"
-chromoxide = "C:/Users/ITP/Documents/TUBAF/Promotion/Data/Oxides_references_Julia/04-16-25-referencepowderspowerdep@532nm/Cr2O3-10min-power10.txt"
-magnesiumchromite = "C:/Users/ITP/Documents/TUBAF/Promotion/Publications/Paper_Raman_mapping/RaMap/Raman_data/References/MgCr2O4/MgO-Cr2O3_02_0001.txt"
-nickelchromite = "C:/Users/ITP/Documents/TUBAF/Promotion/Publications/Paper_Raman_mapping/RaMap/Raman_data/References/NiCr2O4/NiCr2O4_12_0001.txt" 
-ironchromite = "C:/Users/ITP/Documents/TUBAF/Promotion/Data/Oxides_references_Julia/2025-07-07_spinel_ref/Fe2O3_Cr2O3_1.csv"
+ref1_path = "data/reference_spectrum1.<ext>"
+ref2_path = "data/reference_spectrum2.<ext>"
 
 # Path for saving results  
-path_results = "C:/Users/ITP/Documents/TUBAF/Promotion/Publications/Paper_Raman_mapping/RaMap/Results_03"
+path_results = "data/"
 
 #################################################################################################################################################################################
 #################################################################################################################################################################################
@@ -154,13 +150,16 @@ def load_ref(reference, delimiter=None):
 
 # Reference spectra are stored in a dictionary
 
-dict_ref = {"Hematite":{'ref_shifts':load_ref(hematite)[0] , 'ref_spectrum':load_ref(hematite)[1], 'plot color':(158/255, 6/255, 0/255), 'chemical formula':'$\\alpha-Fe_2O_3$'},
-            "Magnesioferrite":{'ref_shifts':load_ref(magnesiumferrite)[0] , 'ref_spectrum':load_ref(magnesiumferrite)[1], 'plot color':(0/255, 128/255, 0/255), 'chemical formula':'$MgFe_2O_4$'},  
-            "Magnesiochromite":{'ref_shifts':load_ref(magnesiumchromite)[0] , 'ref_spectrum':load_ref(magnesiumchromite)[1], 'plot color':(102/255, 202/255, 122/255), 'chemical formula':'$MgCr_2O_4$'},
-            "Nickelchromite":{'ref_shifts':load_ref(nickelchromite)[0] , 'ref_spectrum':load_ref(nickelchromite)[1], 'plot color':(238/255,118/255,0/255), 'chemical formula':'$NiCr_2O_4$'},
-            "Chromoxide":{'ref_shifts':load_ref(chromoxide)[0] , 'ref_spectrum':load_ref(chromoxide)[1], 'plot color':(213/255, 0/255, 213/255), 'chemical formula':'$\\alpha-Cr_2O_3$'},
-            "Ironchromite":{'ref_shifts':load_ref(ironchromite)[0] , 'ref_spectrum':load_ref(ironchromite)[1], 'plot color':(94/255, 60/255, 153/255), 'chemical formula':'$FeCr_2O_4$'},
-}
+dict_ref = {
+    "ref1":{
+    "ref_shifts":load_ref(ref1_path)[0],   
+    "ref_spectrum":load_ref(ref1_path)[1],
+    "plot color":"",
+    "chemical formula":""
+    },
+    "ref2":{ ... },
+  	}
+
 
 #################################################################################################################################################################################
 #################################################################################################################################################################################
