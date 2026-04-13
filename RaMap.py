@@ -29,15 +29,19 @@ from pybaselines.whittaker import iasls
 #################################################################################################################################################################################
 
 # Path to Raman mapping file (CSV or TXT)
-
-map_file = "data/Raman_mapping.<ext>"
+#map_file = "C:/Users/ITP/Documents/TUBAF/Promotion/Data/Raman_Mapping_SPS_spinels/2025-11-17_MgO_steel_SPS_mapping_large1/MgO_steel_SPS_preox_Mapping_Large_01.csv"
+map_file = "C:/Users/ITP/Documents/TUBAF/Promotion/Data/Raman_Mapping_SPS_spinels/2025-11-24_MgO_steel_SPS_mapping_large2/Mapping_Large_02.csv"
 
 # Path to reference spectra files (CSV or TXT)
-ref1_path = "data/reference_spectrum1.<ext>"
-ref2_path = "data/reference_spectrum2.<ext>"
+hematite = "C:/Users/ITP/Documents/TUBAF/Promotion/Data/Oxides_references_Julia/2025-09-26_Hematite_referencepowder/Hematite_01_0001.txt"
+magnesiumferrite = "C:/Users/ITP/Documents/TUBAF/Promotion/Data/Oxides_references_Julia/2025-07-07_spinel_ref/MgFe2O4-1100-alt1.csv"
+chromoxide = "C:/Users/ITP/Documents/TUBAF/Promotion/Data/Oxides_references_Julia/04-16-25-referencepowderspowerdep@532nm/Cr2O3-10min-power10.txt"
+magnesiumchromite = "C:/Users/ITP/Documents/TUBAF/Promotion/Publications/Paper_Raman_mapping/RaMap/Raman_data/References/MgCr2O4/MgO-Cr2O3_02_0001.txt"
+nickelchromite = "C:/Users/ITP/Documents/TUBAF/Promotion/Publications/Paper_Raman_mapping/RaMap/Raman_data/References/NiCr2O4/NiCr2O4_12_0001.txt" 
+ironchromite = "C:/Users/ITP/Documents/TUBAF/Promotion/Data/Oxides_references_Julia/2025-07-07_spinel_ref/Fe2O3_Cr2O3_1.csv"
 
 # Path for saving results  
-path_results = "data/"
+path_results = "C:/Users/ITP/Documents/TUBAF/Promotion/Publications/Paper_Raman_mapping/RaMap/Results_03"
 
 #################################################################################################################################################################################
 #################################################################################################################################################################################
@@ -150,15 +154,13 @@ def load_ref(reference, delimiter=None):
 
 # Reference spectra are stored in a dictionary
 
-dict_ref = {
-    "ref1":{
-    "ref_shifts":load_ref(ref1_path)[0],   
-    "ref_spectrum":load_ref(ref1_path)[1],
-    "plot color":"",
-    "chemical formula":""
-    },
-    "ref2":{ ... },
-  	}
+dict_ref = {"Hematite":{'ref_shifts':load_ref(hematite)[0] , 'ref_spectrum':load_ref(hematite)[1], 'plot color':(158/255, 6/255, 0/255), 'chemical formula':'$\\alpha-Fe_2O_3$'},
+            "Magnesioferrite":{'ref_shifts':load_ref(magnesiumferrite)[0] , 'ref_spectrum':load_ref(magnesiumferrite)[1], 'plot color':(0/255, 128/255, 0/255), 'chemical formula':'$MgFe_2O_4$'},  
+            "Magnesiochromite":{'ref_shifts':load_ref(magnesiumchromite)[0] , 'ref_spectrum':load_ref(magnesiumchromite)[1], 'plot color':(102/255, 202/255, 122/255), 'chemical formula':'$MgCr_2O_4$'},
+            "Nickelchromite":{'ref_shifts':load_ref(nickelchromite)[0] , 'ref_spectrum':load_ref(nickelchromite)[1], 'plot color':(238/255,118/255,0/255), 'chemical formula':'$NiCr_2O_4$'},
+            "Chromoxide":{'ref_shifts':load_ref(chromoxide)[0] , 'ref_spectrum':load_ref(chromoxide)[1], 'plot color':(213/255, 0/255, 213/255), 'chemical formula':'$\\alpha-Cr_2O_3$'},
+            "Ironchromite":{'ref_shifts':load_ref(ironchromite)[0] , 'ref_spectrum':load_ref(ironchromite)[1], 'plot color':(94/255, 60/255, 153/255), 'chemical formula':'$FeCr_2O_4$'},
+}
 
 #################################################################################################################################################################################
 #################################################################################################################################################################################
@@ -168,7 +170,7 @@ dict_ref = {
 # ======================
 
 # Function for saving of figures
-run_func = input("Do you want to view and save intermediate results? (y/n): ").strip().lower()
+run_func = input("Do you want to view and save intermediate results as .png images? (y/n): ").strip().lower()
 def Save_Figure(filename, decision):
     '''
     The user can decide whether the results should be saved as a PNG (yes/no).
@@ -430,6 +432,9 @@ else:
         # Coordinates are not found in mapping data set -> skipping the plot
         print("Plotting of sample spectrum skipped. Coordinates not found in data.")
 
+
+###############################################################
+
 # Calculating Signal-to-noise ratio
 
 ## Threshold for SNR
@@ -484,96 +489,87 @@ noise_std_per_spectrum = np.array(noise_std_per_spectrum)
 snr_per_spectrum = std_per_spectrum / noise_std_per_spectrum
 
 ## Mask spectra below threshold
-mask_good = snr_per_spectrum >= snr_threshold
-snr_masked = np.where(mask_good, snr_per_spectrum, 0)
+mask_good_snr = snr_per_spectrum >= snr_threshold
+snr_masked = np.where(mask_good_snr, snr_per_spectrum, 0)
 
-## Find indices where snr_masked == 0
-indices = np.where(snr_masked == 0)[0]
-
-
-if len(indices) > 0:
-    print("\n There are spectra with SNR < threshold or with intensive PL.\n"
-          f"The corresponding spectra ({np.sum(snr_masked == 0)}) will therefore be excluded from the following analysis.")
-
-    # Collecting the corresponding spectra
-    selected_spectra = corrected_signal[indices,:]   # shape: (n_selected, n_points)
-
-    # Collect corresponding coordinates
-    selected_x = x_positions[indices]  # shape: (n_selected,)
-    selected_y = y_positions[indices]  # shape: (n_selected,)
-
-    # Transpose -> (n_points, n_selected)
-    selected_spectra = selected_spectra.T
-
-    # Prepend coordinates as first two rows
-    coords = np.vstack((
-        selected_x[np.newaxis, :],  # first row = X
-        selected_y[np.newaxis, :]   # second row = Y
-    ))  # shape: (2, n_selected)
-
-    # Combine coordinates and spectra
-    result = np.vstack((coords, selected_spectra))  # shape: (2 + n_points, n_selected)
-    
-    # Create an array for the first column (same number of rows as result_matrix)
-    first_col = np.empty((result.shape[0], 1), dtype=float)
-    first_col[:] = np.nan               # Initialize with empty strings
-    first_col[2:, 0] = common_axis  # Fill wavelengths starting from the 3rd row
-
-    # Combine first column with the data
-    result_save = np.hstack((first_col, result))
-    
-    # Check if the file already exists
-    if os.path.exists(os.path.join(path_results, "Excluded_spectra.txt")):
-            user_input = input("The file 'Excluded_spectra.txt' already exists. Do you want to overwrite it? (y/n): ").strip().lower()
-            if user_input == 'y':
-                np.savetxt(os.path.join(path_results,"Excluded_spectra.txt"), result_save)
-                print("File 'Excluded_spectra.txt' has been overwritten.")
-            else:
-                print("File save has been canceled. No changes made.")
-    else:
-        np.savetxt(os.path.join(path_results,"Excluded_spectra.txt"), result_save)
-        print("Spectra saved as 'Excluded_spectra.txt'.")
 
 ###############################################################
 
-## Set PL-dominant spectra to zero
-corrected_signal[pl_mask, :]=0 
+# Plot excluded measurement points
 
-## Set spectra with low SNR to zero
-corrected_signal[~mask_good, :] = 0
-
-###############################################################
-
-# Plot SNR map
 plt.figure(figsize=(8, 6))
 
-if snr_per_spectrum.min() >= snr_threshold:
-    sc = plt.scatter(x_positions, y_positions, c=snr_per_spectrum, cmap='Blues', s=30, vmin=0)
-    plt.colorbar(sc, label='SNR per spectrum').ax.axhline(snr_threshold, color='red')
-else:
-    mask_b = np.all(corrected_signal == 0, axis=1)  # True, when row = 0
-    mask_below = np.where(mask_b)[0]#mask_bad
+# Starting with all measurement points, set them initially as 'good points'
+plt.scatter(x_positions, y_positions, c='green', label='Good positions', s=30)
 
-    mask_above = np.where(~mask_b)[0]#mask_good
+# SNR excluded points
+
+mask_above = mask_good_snr
+mask_below = ~mask_good_snr
     
-    # Plot good points
-    sc = plt.scatter(x_positions[mask_above], y_positions[mask_above],
-                     c=snr_per_spectrum[mask_above], cmap='Blues', s=30, vmin=0)
-    # Plot bad points in red
-    plt.scatter(x_positions[mask_below], y_positions[mask_below], c='red', label='excluded positions', s=30)
-    plt.legend(bbox_to_anchor=(0.5,-0.2), fontsize=10)
-    plt.colorbar(sc, label='SNR per spectrum').ax.axhline(snr_threshold, color='red')
+# Repaint bad points (SNR < SNR_threshold) in red
+plt.scatter(x_positions[mask_below], y_positions[mask_below], c='red', label=f'Excluded positions (low signal-to-noise ratio, SNR < {snr_threshold})', s=30)
 
+# PL coefficient excluded points
+
+mask_pl_above = pl_mask
+mask_pl_below = ~pl_mask
+
+mask_pl_above_only = np.zeros(pl_mask.shape[0], dtype=bool)
+
+for i in range(len(mask_pl_above)):  
+    if mask_pl_above[i] != mask_below[i]:  # Show data points where the PL spectra are additionally excluded and not already excluded by the SNR
+       mask_pl_above_only[i] = True
+
+plt.scatter(x_positions[mask_pl_above_only], y_positions[mask_pl_above_only], c='blue', label=f'Excluded positions (intensive PL background, R > {pl_threshold})', s=30)
+
+plt.legend(bbox_to_anchor=(0.8,-0.2), fontsize=10)
 plt.xlabel(f'x-coordinate / {unit}')
 plt.ylabel(f'y-coordinate / {unit}')
-plt.title('SNR mapping')
+plt.title('SNR and PL excluded mapping')
 plt.gca().xaxis.set_major_locator(MultipleLocator(0.5))
 plt.gca().yaxis.set_major_locator(MultipleLocator(0.5))       
 plt.gca().xaxis.set_major_formatter(FuncFormatter(custom_ticks))
 plt.gca().yaxis.set_major_formatter(FuncFormatter(custom_ticks))
 plt.gca().set_aspect('equal')
-Save_Figure('SNR_map', f'{run_func}')
+Save_Figure('SNR_and_PL_excluded_map', f'{run_func}')
 plt.show()
+
+###############################################################
+
+# Set PL-dominant spectra to zero
+corrected_signal[pl_mask, :]=0 
+
+## Set spectra with low SNR to zero
+corrected_signal[~mask_good_snr, :] = 0
+
+## Find indices where snr_masked == 0
+indices = np.where((snr_masked == 0) | (pl_mask==True))[0]
+
+if len(indices) > 0:
+    print("\n There are spectra with SNR<threshold or with intensive PL.\n"
+          f"The corresponding spectra ({np.sum(snr_masked == 0)}) will therefore be excluded from the following analysis.")
+
+    # Collecting the corresponding spectra
+    selected_spectra = corrected_signal[indices]   # shape: (n_selected, n_points)
+
+    # Transpose -> (n_points, n_selected)
+    selected_spectra = selected_spectra.T
+
+    # Array
+    result = np.column_stack((common_axis, selected_spectra))
+    
+    # Check if the file already exists
+    if os.path.exists(os.path.join(path_results, "Excluded_spectra.txt")):
+            user_input = input("The file 'Excluded_spectra.txt' already exists. Do you want to overwrite it? (y/n): ").strip().lower()
+            if user_input == 'y':
+                np.savetxt(os.path.join(path_results,"Excluded_spectra.txt"), result)
+                print("File 'Excluded_spectra.txt' has been overwritten.")
+            else:
+                print("File save has been canceled. No changes made.")
+    else:
+        np.savetxt(os.path.join(path_results,"Excluded_spectra.txt"), result)
+        print("Spectra saved as 'Excluded_spectra.txt'.")
 
 # ================================================
 # Non-negative matrix factorization (unsupervised)
@@ -832,52 +828,31 @@ nmf_flags = np.array(
 mask_uncertanity = nmf_flags[max_indices].astype(int)
 
 # Find indices where mask_uncertanity == 0
-indices_un = np.where(mask_uncertanity == 0)[0]
+indices = np.where(mask_uncertanity == 0)[0]
 
-if len(indices_un) > 0:
-    print("\n There is inconsistency between the NMF decomposition and the cosine similarity results.\n"
+if len(indices) > 0:
+    print("\n There are inconsistency between the NMF decomposition and the cosine similarity results.\n"
           f"The corresponding spectra ({np.sum(mask_uncertanity == 0)}) will therefore be excluded from the following analysis.")
 
     # Collecting the corresponding spectra
-    selected_spectra = corrected_signal[indices_un]   # shape: (n_selected, n_points)
-
-     # Collect corresponding coordinates
-    selected_x = x_positions[indices_un]  # shape: (n_selected,)
-    selected_y = y_positions[indices_un]  # shape: (n_selected,)
+    selected_spectra = corrected_signal[indices]   # shape: (n_selected, n_points)
 
     # Transpose -> (n_points, n_selected)
     selected_spectra = selected_spectra.T
 
-    # Prepend coordinates as first two rows
-    coords = np.vstack((
-        selected_x[np.newaxis, :],  # first row = X
-        selected_y[np.newaxis, :]   # second row = Y
-    ))  # shape: (2, n_selected)
-
-    # Combine coordinates and spectra
-    result = np.vstack((coords, selected_spectra))  # shape: (2 + n_points, n_selected)
-    
-    # Create an array for the first column (same number of rows as result_matrix)
-    first_col = np.empty((result.shape[0], 1), dtype=float)
-    first_col[:] = np.nan               # Initialize with empty strings
-    first_col[2:, 0] = common_axis  # Fill wavelengths starting from the 3rd row
-
-    # Combine first column with the data
-    result_save = np.hstack((first_col, result))
-
-    ''' # Array
-    result = np.column_stack((common_axis, selected_spectra))'''
+    # Array
+    result = np.column_stack((common_axis, selected_spectra))
     
     # Check if the file already exists
     if os.path.exists(os.path.join(path_results, "Inconsistency_spectra.txt")):
             user_input = input("The file 'Inconsistency_spectra.txt' already exists. Do you want to overwrite it? (y/n): ").strip().lower()
             if user_input == 'y':
-                np.savetxt(os.path.join(path_results,"Inconsistency_spectra.txt"), result_save)
+                np.savetxt(os.path.join(path_results,"Inconsistency_spectra.txt"), result)
                 print("File 'Inconsistency_spectra.txt' has been overwritten.")
             else:
                 print("File save has been canceled. No changes made.")
     else:
-        np.savetxt(os.path.join(path_results,"Inconsistency_spectra.txt"), result_save)
+        np.savetxt(os.path.join(path_results,"Inconsistency_spectra.txt"), result)
         print("Spectra saved as 'Inconsistency_spectra.txt'.")
          
 
