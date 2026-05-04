@@ -18,6 +18,8 @@ The required packages can be installed by
 pip install -r requirements.txt
 ```
 
+It is helpful to create a separate environment for this purpose.
+
 ## Getting started
 
 A step-by-step guide can be found in the [tutorial](tutorial.md).
