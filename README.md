@@ -11,14 +11,17 @@ Examples are available in the [tutorial](tutorial.md).
 ## Requirements
 Python >= 3.11 
  
-_Package requirements are listed in [requirements](requirements.txt)
+Package requirements are listed in [requirements](requirements.txt)
 
 The required packages can be installed by
 ```sh
-pip install -r src/requirements.txt
+pip install -r requirements.txt
 ```
 
 ## Getting started
+
+A step-by-step guide can be found in the [tutorial](tutorial.md).
+
 1. Place your Raman `.csv` or `.txt` files in the `data/` directory before running the workflow.
 2. Add necessary components to the [`RaMap.py`](RaMap.py) script 
 
