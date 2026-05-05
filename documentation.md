@@ -10,7 +10,7 @@ Package requirements are listed in [requirements](requirements.txt).
 The required packages can be installed by
 
 ```
-pip install -r src/requirements.txt
+pip install -r requirements.txt
 ```
 
 ## Raman data
