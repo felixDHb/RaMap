@@ -12,6 +12,9 @@ At the beginning, it should be checked whether all rerquired python packages are
 After executing the script [RaMap.py](RaMap.py), a file explorer window will open.
 Use this window to select the Raman mapping dataset.
 
+![Step 1](docs/images/gui_step1.png)
+
+
 Further information regarding supported file formats and required data structures can be found in the [readme](README.md#Requirements).
 
 ### Load Raman Reference Spectra
