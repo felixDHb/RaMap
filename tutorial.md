@@ -4,6 +4,10 @@ This tutorial is intended to guide the application of RaMap. It provides a step-
 
 At the beginning, it should be checked whether all rerquired python packages are installed. Please refer to the [readme](README.md#Requirements) file for details.
 
-## Before running the script
+##1 - Run the script
+
+##2 - Import the Raman data
+
+
 
 
