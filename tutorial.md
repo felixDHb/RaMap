@@ -17,7 +17,7 @@ Use this window to select the Raman mapping dataset.
   <em>Figure 1: File selection window for Raman mapping data.</em>
 </p>
 
-Further information regarding supported file formats and required data structures can be found in the [readme](README.md#Requirements).
+Further information regarding supported file formats and required data structures can be found in the [documentation](documentation.md#input-data-format-raman-mapping).
 
 ### Load Raman Reference Spectra
 
@@ -29,7 +29,7 @@ In this step, select and import all relevant reference files.
   <em>Figure 1: File selection window for reference Raman spectra.</em>
 </p>
 
-Details on supported file formats are also provided in the [readme](README.md#Requirements).
+Details on supported file formats are also provided in the [documentation](documentation.md#input-data-format-raman-mapping).
 
 Notes
 Ensure that all required reference spectra are selected before proceeding.
