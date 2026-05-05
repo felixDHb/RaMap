@@ -29,7 +29,7 @@ In this step, select and import all relevant reference files.
   <em>Figure 1: File selection window for reference Raman spectra.</em>
 </p>
 
-Details on supported file formats are also provided in the [documentation](documentation.md#input-data-format-raman-mapping).
+Details on supported file formats are also provided in the [documentation](documentation.md#input-data-format-raman-spectra-for-reference-materials).
 
 Notes
 Ensure that all required reference spectra are selected before proceeding.
