@@ -26,7 +26,7 @@ In this step, select and open all reference files.
 
 <p align="center">
   <img src="docs/RaMap_tutorial/explorer_load_references.jpg" width="600"/><br>
-  <em>Figure 1: File selection window for reference Raman spectra.</em>
+  <em>Figure 2: File selection window for reference Raman spectra.</em>
 </p>
 
 Details on supported file formats are also provided in the [documentation](documentation.md#input-data-format-raman-spectra-for-reference-materials).
