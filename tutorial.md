@@ -22,7 +22,7 @@ Further information regarding supported file formats and required data structure
 ### Load Raman Reference Spectra
 
 Once the mapping dataset has been selected, a second window will appear for importing reference spectra.
-In this step, select and import all relevant reference files.
+In this step, select and open all reference files.
 
 <p align="center">
   <img src="docs/RaMap_tutorial/explorer_load_references.jpg" width="600"/><br>
@@ -31,8 +31,8 @@ In this step, select and import all relevant reference files.
 
 Details on supported file formats are also provided in the [documentation](documentation.md#input-data-format-raman-spectra-for-reference-materials).
 
-Notes
-Ensure that all required reference spectra are selected before proceeding.
-Supported file formats and input structure requirements are described in the documentation.
+Nachdem die referensdaten geladen wurden könne diese im terminal benannt werden
+
+
 
 
