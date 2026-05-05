@@ -31,11 +31,13 @@ In this step, select and open all reference files.
 
 Details on supported file formats are also provided in the [documentation](documentation.md#input-data-format-raman-spectra-for-reference-materials).
 
+
 After the reference data have been loaded, they can be assigned names in the terminal:
 ```
 File: path-to/Tutorial_Raman_data/References/Cr2O3.txt
 Compound name: chromiumoxide
 ```
+
 
 After confirming with ENTER, the chemical formula can be entered next. For this purpose, LaTeX notation should be used.
 ```
@@ -43,9 +45,10 @@ File: path-to/Tutorial_Raman_data/References/Cr2O3.txt
 Compound name: chromiumoxide
 Chemical formula: \alpha -Cr_2O_3
 ```
+
+
 After confirming again with ENTER, a color can be assigned to this compound. Both hexadecimal color codes and named colors can be used.
 
-Pressing ENTER without specifying a color assigns a default system color. By default, the Set1 color palette is used.
 ```
 File: path-to/Tutorial_Raman_data/References/Cr2O3.txt
 Compound name: chromiumoxide
@@ -53,4 +56,5 @@ Chemical formula: \alpha -Cr_2O_3
 Plot color (press Enter for system color): #D500D5
 ```
 
+Pressing ENTER without specifying a color assigns a default system color. By default, the Set1 color palette is used.
 
