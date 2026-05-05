@@ -56,5 +56,5 @@ Chemical formula: \alpha -Cr_2O_3
 Plot color (press Enter for system color): #D500D5
 ```
 
-Pressing ENTER without specifying a color assigns a default system color. By default, the Set1 color palette is used.
+Pressing ENTER without specifying a color assigns a default system color. By default, the [Set1](https://matplotlib.org/stable/users/explain/colors/colormaps.html#qualitative) color palette is used.
 
