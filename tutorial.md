@@ -73,4 +73,11 @@ For the dataset used in this tutorial, all inputs are summarized in the table be
 | MgO-Cr2O3.txt | Magnesiochromite | MgCr_2O_4 | #66CA7A |
 | NiCr2O4.txt | Nickelchromite | NiCr_2O_4 | #EE7600 |
 
+> :bulb: This internal database only needs to be created once. It is then automatically saved as a `.json` file in the same directory as the Raman mapping file (in our case under *dict_ref_Mapping_Large_02.json*).
+> When the same mapping is processed again in the workflow, the system automatically accesses this JSON file and retrieves the required information.
+> 
+> If reference data changes (e.g., new entries are added or colors need to be updated), this can be done directly in the JSON file. Alternatively, the file can be removed from the directory, forcing it to be regenerated.
+>
+> If the JSON file is not found in the directory, the procedure must be repeated.
+
 
