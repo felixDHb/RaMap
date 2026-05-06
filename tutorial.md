@@ -149,7 +149,7 @@ For the dataset used in this tutorial, all inputs are summarized in the table be
   
 ## 7 Intermediade images
 
-If the prompt from Step 3 was answered with `y`, additional intermediate results are now displayed, resulting from the Raman data analysis using Non-negative Factorization or Cosine similarity.  
+If the prompt from Step 3 was answered with `y`, additional intermediate results are now displayed, resulting from the Raman data analysis using Non-negative Factorization or Cosine similarity. All figures will be saved in the folder `RaMap_results-Mapping_Large_02`    
 Further information on this will follow.
 
 ### Non-negative Factorization
@@ -178,5 +178,13 @@ This is based on the elbow algorithm, which is automatically executed in the bac
 
 <p align="center">
   <img src="docs/RaMap_tutorial/cosine_similarity_chromiumoxide.png" width="500"/><br>
-  <em>Figure 8: The calculated Cosine Similarity between the reference Raman spectrum of chromium oide and the measured Raman spectrum per spatial measurement point.</em>
+  <em>Figure 8: The calculated Cosine Similarity between the reference Raman spectrum of chromium oxide and the measured Raman spectrum per spatial measurement point.</em>
+</p>
+
+This figure will be displayed for each of the stored reference phases.
+<br>
+
+<p align="center">
+  <img src="docs/RaMap_tutorial/cosine_similarity_chromiumoxide.png" width="500"/><br>
+  <em>Figure 9: This shows the phases that have the highest cosine similarity with the corresponding measured spectrum at each measurement point.</em>
 </p>
