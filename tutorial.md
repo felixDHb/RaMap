@@ -66,7 +66,7 @@ For the dataset used in this tutorial, all inputs are summarized in the table be
 
 | File   | Compound           | Chemical formula     |     Plot color                                                 |
 | --------- | ------ | ------------------------ | ----------------------------------------------------------------------- |
-| Cr2O3.txt | Chromoxide | \alpha -Cr_2O_3 | #D500D5 |
+| Cr2O3.txt | Chromium oxide | \alpha -Cr_2O_3 | #D500D5 |
 | Fe2O3_Cr2O3.csv | Ironchromite | FeCr_2O_4 | #5E3C99 |
 | Hematite.txt | Hematite | \alpha -Fe_2O_3 | #9E0600 |
 | MgFe2O4.csv | Magnesioferrite | MgFe_2O_4 | #008000 |
@@ -164,6 +164,6 @@ This is based on the elbow algorithm, which is automatically executed in the bac
 
 <p align="center">
   <img src="docs/RaMap_tutorial/NMF_component_chromoxide.png" width="600"/><br>
-  <em>Figure 6: The following windows shows the results of the Non-negative Factorization decomposition. Here, one of the identified phases, *chromium oxide*, is displayed as an example.</em>
+  <em>Figure 6: The following windows shows the results of the Non-negative Factorization decomposition. Here, one of the identified phases, chromium oxide, is displayed as an example.</em>
 </p>
 
