@@ -140,7 +140,7 @@ For the dataset used in this tutorial, all inputs are summarized in the table be
 
   <p align="center">
     <img src="docs/RaMap_tutorial/Excludes_positions.png" width="600"/><br>
-    <em>Figure 4: .</em>
+    <em>Figure 4: abbildung die zgt welche messpositionen im mapping verwendet qwerdenund welche ausgescvhlosen werden.</em>
   </p>
 
   
