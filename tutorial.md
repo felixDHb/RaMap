@@ -189,7 +189,7 @@ This figure will be displayed for each of the stored reference phases.
   <em>Figure 9: This shows the phases that have the highest cosine similarity with the corresponding measured spectrum at each measurement point.</em>
 </p>
 
-## Combination of Non-negative Matrix Factorization and Cosine Similarity into a Combined Score
+## 8 Combination of Non-negative Matrix Factorization and Cosine Similarity into a Combined Score
 
 The core aspect of RaMap is that the results from NMF and cosine similarity are combined to calculate a *Combined Score*, which is displayed for each phase from the database. This combined score is then used to construct phase mappings, visualizing the spatial distribution of the score and providing a measure of the likelihood that a phase is positively assigned.  <br>
 Since both Non-negative Matrix Factorization and Cosine Similarity have their weaknesses and artifacts may occur in the result interpretation, the phase identifications from both methods are first compared. If a phase is found by only one of the methods, this is considered an inconsistency, and the corresponding spectra are excluded from the phase mapping. <br>  
@@ -200,4 +200,13 @@ Next, the calculated Combined Scores are computed for each retained phase, and t
 <p align="center">
   <img src="docs/RaMap_tutorial/combined_score_chromiumoxide.png" width="500"/><br>
   <em>Figure 9: The calculated Combined Score for the assigned phase chromium oxide per spatial measurement point.</em>
+</p>
+
+## 9 Generation of the phase mappings
+Finally, the generated phase mappings are displayed and saved in the folder `RaMap_results-Mapping_Large_02`.  
+These mappings are created based on the Combined Score, and a smoothing algorithm is applied to generate a continuous spatial distribution.
+
+<p align="center">
+  <img src="docs/RaMap_tutorial/phase_map_chromiumoxide.png" width="800"/><br>
+  <em>Figure 10: The generated phase map of chromium oxide.</em>
 </p>
