@@ -72,6 +72,7 @@ For the dataset used in this tutorial, all inputs are summarized in the table be
 | MgFe2O4.csv | Magnesioferrite | MgFe_2O_4 | #008000 |
 | MgO-Cr2O3.txt | Magnesiochromite | MgCr_2O_4 | #66CA7A |
 | NiCr2O4.txt | Nickelchromite | NiCr_2O_4 | #EE7600 |
+<br>
 
 > :bulb: This internal database only needs to be created once. It is then automatically saved as a `.json` file in the same directory as the Raman mapping file (in our case under *dict_ref_Mapping_Large_02.json*).
 > When the same mapping is processed again in the workflow, the system automatically accesses this JSON file and retrieves the required information.
@@ -153,10 +154,16 @@ Further information on this will follow.
 
 ### Non-negative Factorization
 
-  <p align="center">
-    <img src="docs/RaMap_tutorial/NMF_number_of_components.png" width="600"/><br>
-    <em>Figure 5: This figure shows the optimal number of components for the Non-negative Factorization decomposition.  
-  This is based on the elbow algorithm, which is automatically executed in the background.</em>
-  </p>
+<p align="center">
+  <img src="docs/RaMap_tutorial/NMF_number_of_components.png" width="600"/><br>
+  <em>Figure 5: This figure shows the optimal number of components for the Non-negative Factorization decomposition.  
+This is based on the elbow algorithm, which is automatically executed in the background.</em>
+</p>
 
+<br>
+
+<p align="center">
+  <img src="docs/RaMap_tutorial/NMF_component_chromoxide.png" width="600"/><br>
+  <em>Figure 6: The following windows shows the results of the Non-negative Factorization decomposition. Here, one of the identified phases, *chromium oxide*, is displayed as an example.</em>
+</p>
 
