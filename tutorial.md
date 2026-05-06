@@ -154,8 +154,9 @@ Further information on this will follow.
 ### Non-negative Factorization
 
   <p align="center">
-    <img src="docs/RaMap_tutorial/Excludes_positions.png" width="600"/><br>
-    <em>Figure 4: Illustration indicating which measurement positions in the mapping are included and which are excluded.</em>
+    <img src="docs/RaMap_tutorial/NMF_number_of_components.png" width="600"/><br>
+    <em>Figure 5: This figure shows the optimal number of components for the Non-negative Factorization decomposition.  
+  This is based on the elbow algorithm, which is automatically executed in the background.</em>
   </p>
 
 
