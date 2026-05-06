@@ -110,7 +110,7 @@ For the dataset used in this tutorial, all inputs are summarized in the table be
   The spectra represent intermediate results and are saved in the folder `RaMap_results-Mapping_Large_02`.
 
   <p align="center">
-    <img src="docs/RaMap_tutorial/window_reference_spectrum_chromiumoxide.png" width="600"/><br>
+    <img src="docs/RaMap_tutorial/window_reference_spectrum_chromiumoxide.png" width="500"/><br>
     <em>Figure 3: Window to display reference Raman spectrum of chromoxide.</em>
   </p>
 
@@ -140,7 +140,7 @@ For the dataset used in this tutorial, all inputs are summarized in the table be
 * A window now opens showing all measurement positions, with an indication of whether the spectrum at each position will be used (*good positions*) or excluded due to a poor SNR or strong PL background. This is an intermediate result and is saved in the folder `RaMap_results-Mapping_Large_02`.
 
   <p align="center">
-    <img src="docs/RaMap_tutorial/Excludes_positions.png" width="600"/><br>
+    <img src="docs/RaMap_tutorial/Excludes_positions.png" width="500"/><br>
     <em>Figure 4: Illustration indicating which measurement positions in the mapping are included and which are excluded.</em>
   </p>
   <br>
@@ -155,7 +155,7 @@ Further information on this will follow.
 ### Non-negative Factorization
 
 <p align="center">
-  <img src="docs/RaMap_tutorial/NMF_number_of_components.png" width="600"/><br>
+  <img src="docs/RaMap_tutorial/NMF_number_of_components.png" width="500"/><br>
   <em>Figure 5: This figure shows the optimal number of components for the Non-negative Factorization decomposition.  
 This is based on the elbow algorithm, which is automatically executed in the background.</em>
 </p>
@@ -170,7 +170,13 @@ This is based on the elbow algorithm, which is automatically executed in the bac
 <br>
 
 <p align="center">
-  <img src="docs/RaMap_tutorial/NMF_mean_squared_error.png" width="1000"/><br>
+  <img src="docs/RaMap_tutorial/NMF_mean_squared_error.png" width="500"/><br>
   <em>Figure 7: The Mean Squared Error between the Non-negative Factorization model and the measured Raman spectra per spatial measurment position.</em>
 </p>
 
+### Cosine Similarity
+
+<p align="center">
+  <img src="docs/RaMap_tutorial/cosine_similarity_chromiumoxide.png" width="500"/><br>
+  <em>Figure 8: The calculated Cosine Similarity between the reference Raman spectrum of chromium oide and the measured Raman spectrum per spatial measurement point.</em>
+</p>
