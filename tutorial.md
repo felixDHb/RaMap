@@ -167,3 +167,10 @@ This is based on the elbow algorithm, which is automatically executed in the bac
   <em>Figure 6: The following windows shows the results of the Non-negative Factorization decomposition. Here, one of the identified phases, chromium oxide, is displayed as an example.</em>
 </p>
 
+<br>
+
+<p align="center">
+  <img src="docs/RaMap_tutorial/NMF_mean_squared_error.png" width="1000"/><br>
+  <em>Figure 7: The Mean Squared Error between the Non-negative Factorization model and the measured Raman spectra per spatial measurment position.</em>
+</p>
+
