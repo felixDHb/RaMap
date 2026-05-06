@@ -80,13 +80,30 @@ For the dataset used in this tutorial, all inputs are summarized in the table be
 >
 > If the JSON file is not found in the directory, the procedure must be repeated.
 
-## 3 abfrage zum speichern von zwischenegebnissen
-* nach dem erfolgreichen impoertieren der raman daten erscheint im teriminal die abfrage
+## 3 Display and save intermediate results?
+
+* After successfully importing the Raman data, the following prompt appears in the terminal:
   ```
-  Do you want to view and save intermediate results as .png images? (y/n):
+  Do you want to view and save intermediate results as .png images? (y/n): y
   ```
 
   RaMap provides the option to display and save *intermediate results* that are used for generating phase mappings. These results are briefly discussed in the steps ... bnis ... <br>
   If this option is confirmed with `y`, all intermediate images will be displayed and saved sequentially. They can be found in the folder `RaMap_results-{map_file_name}`, which is generated and located in the same directory as the Raman mapping file. <br>
   <br>
   If this option is answered with `n`, only the final phase maps will be generated and saved in `RaMap_results-{map_file_name}`.
+
+## 4 Selecting the Region of Interest
+
+* In this step, the region of the Raman spectrum containing usable signals can be selected.  
+  To do this, the following prompt must be answered:
+  ```
+  Which wavenumber range should be considered? 
+  Please enter the values in the format: minimum,maximum 160,1400
+  ```
+  In our example, we select the range between 160 cm<sup>-1</sup> to 1400 cm<sup>-1</sup>.
+
+  ## 5 Display of the reference Raman spectra
+
+* After the input is completed, the baseline-corrected and min-max normalized reference spectra are displayed sequentially.  
+  These windows can be closed easily.  
+  The spectra represent intermediate results and are saved in the folder `RaMap_results-{map_file_name}`.
