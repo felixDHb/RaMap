@@ -1,6 +1,6 @@
 # Tutorial for RaMap
 
-This tutorial is intended to guide the application of RaMap. It provides a step-by-step instruction and demonstrates its use through two example Raman mapping datasets.
+This tutorial is intended to guide the application of RaMap. It provides a step-by-step instruction and demonstrates its use through the example Raman mapping dataset *Mapping_Large_02.csv*.
 
 At the beginning, it should be checked whether all rerquired python packages are installed. Please refer to the [readme](README.md#Requirements) file for details.
 
@@ -88,9 +88,9 @@ For the dataset used in this tutorial, all inputs are summarized in the table be
   ```
 
   RaMap provides the option to display and save *intermediate results* that are used for generating phase mappings. These results are briefly discussed in the steps ... bnis ... <br>
-  If this option is confirmed with `y`, all intermediate images will be displayed and saved sequentially. They can be found in the folder `RaMap_results-{map_file_name}`, which is generated and located in the same directory as the Raman mapping file. <br>
+  If this option is confirmed with `y`, all intermediate images will be displayed and saved sequentially. They can be found in the folder `RaMap_results-Mapping_Large_02`, which is generated and located in the same directory as the Raman mapping file. <br>
   <br>
-  If this option is answered with `n`, only the final phase maps will be generated and saved in `RaMap_results-{map_file_name}`.
+  If this option is answered with `n`, only the final phase maps will be generated and saved in `RaMap_results-Mapping_Large_02`.
 
 ## 4 Selecting the Region of Interest
 
@@ -106,7 +106,7 @@ For the dataset used in this tutorial, all inputs are summarized in the table be
 
 * After the input is completed, the baseline-corrected and min-max normalized reference spectra are displayed sequentially.  
   These windows can be closed easily.  
-  The spectra represent intermediate results and are saved in the folder `RaMap_results-{map_file_name}`.
+  The spectra represent intermediate results and are saved in the folder `RaMap_results-Mapping_Large_02`.
 
   <p align="center">
     <img src="docs/RaMap_tutorial/window_reference_spectrum_chromoxide.png" width="600"/><br>
@@ -136,7 +136,7 @@ For the dataset used in this tutorial, all inputs are summarized in the table be
   
   More detailed information will follow.
 
-* A window now opens showing all measurement positions, with an indication of whether the spectrum at each position will be used (*good positions*) or excluded due to a poor SNR or strong PL background. This is an intermediate result and is saved in the folder `RaMap_results-{map_file_name}`.
+* A window now opens showing all measurement positions, with an indication of whether the spectrum at each position will be used (*good positions*) or excluded due to a poor SNR or strong PL background. This is an intermediate result and is saved in the folder `RaMap_results-Mapping_Large_02`.
 
   <p align="center">
     <img src="docs/RaMap_tutorial/Excludes_positions.png" width="600"/><br>
