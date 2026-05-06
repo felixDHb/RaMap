@@ -110,7 +110,7 @@ For the dataset used in this tutorial, all inputs are summarized in the table be
   The spectra represent intermediate results and are saved in the folder `RaMap_results-Mapping_Large_02`.
 
   <p align="center">
-    <img src="docs/RaMap_tutorial/window_reference_spectrum_chromoxide.png" width="600"/><br>
+    <img src="docs/RaMap_tutorial/window_reference_spectrum_chromiumoxide.png" width="600"/><br>
     <em>Figure 3: Window to display reference Raman spectrum of chromoxide.</em>
   </p>
 
@@ -163,7 +163,7 @@ This is based on the elbow algorithm, which is automatically executed in the bac
 <br>
 
 <p align="center">
-  <img src="docs/RaMap_tutorial/NMF_component_chromoxide.png" width="600"/><br>
+  <img src="docs/RaMap_tutorial/NMF_component_chromoxide.png" width="1000"/><br>
   <em>Figure 6: The following windows shows the results of the Non-negative Factorization decomposition. Here, one of the identified phases, chromium oxide, is displayed as an example.</em>
 </p>
 
