@@ -102,7 +102,7 @@ For the dataset used in this tutorial, all inputs are summarized in the table be
   ```
   In our example, we select the range between 160 cm<sup>-1</sup> to 1400 cm<sup>-1</sup>.
 
-  ## 5 Display of the reference Raman spectra
+## 5 Display of the reference Raman spectra
 
 * After the input is completed, the baseline-corrected and min-max normalized reference spectra are displayed sequentially.  
   These windows can be closed easily.  
@@ -112,3 +112,27 @@ For the dataset used in this tutorial, all inputs are summarized in the table be
     <img src="docs/RaMap_tutorial/window_reference_spectrum_chromoxide.png" width="600"/><br>
     <em>Figure 3: Window to display reference Raman spectrum of chromoxide.</em>
   </p>
+
+## 6 Setting threshold values
+
+* Next, a prompt is started where the threshold for possible photoluminescence background (PL threshold) must be entered.
+  ```
+  Please enter a value for the PL threshold. (Set 0 if no PL should be considered):0.87
+  ```
+
+  In this example, a value of `0.87` is used for the PL threshold.  <br>
+  
+  This threshold is determined based on the influence of the baseline relative to the baseline-corrected Raman signal.  
+  This means that, in this case, all spectra whose baseline, evaluated at the wavenumber position with the highest intensity in the spectrum, accounts for more than 87% of the total intensity are considered to be affected by photoluminescence (PL) and are      excluded from subsequent analysis.  <br>
+  
+  More detailed information will follow.
+  
+* Next, a threshold for the signal-to-noise ratio (SNR) is requested.
+  ```
+  Please enter a value for the SNR threshold:3
+  ```
+
+  Here, we use a value of `3`, which corresponds to an accepted rule of thumb.  <br>
+  
+  More detailed information will follow.
+  
