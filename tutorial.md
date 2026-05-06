@@ -140,8 +140,22 @@ For the dataset used in this tutorial, all inputs are summarized in the table be
 
   <p align="center">
     <img src="docs/RaMap_tutorial/Excludes_positions.png" width="600"/><br>
-    <em>Figure 4: abbildung die zgt welche messpositionen im mapping verwendet qwerdenund welche ausgescvhlosen werden.</em>
+    <em>Figure 4: Illustration indicating which measurement positions in the mapping are included and which are excluded.</em>
+  </p>
+  <br>
+  
+  In addition, a file called `Excluded_spectra.txt` is created in the folder `RaMap_results-Mapping_Large_02`, collecting all excluded spectra for later review in external programms.
+  
+## 7 Intermediade images
+
+If the prompt from Step 3 was answered with `y`, additional intermediate results are now displayed, resulting from the Raman data analysis using Non-negative Factorization or Cosine similarity.  
+Further information on this will follow.
+
+### Non-negative Factorization
+
+  <p align="center">
+    <img src="docs/RaMap_tutorial/Excludes_positions.png" width="600"/><br>
+    <em>Figure 4: Illustration indicating which measurement positions in the mapping are included and which are excluded.</em>
   </p>
 
-  
-  
+
