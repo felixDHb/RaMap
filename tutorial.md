@@ -135,4 +135,13 @@ For the dataset used in this tutorial, all inputs are summarized in the table be
   Here, we use a value of `3`, which corresponds to an accepted rule of thumb.  <br>
   
   More detailed information will follow.
+
+* A window now opens showing all measurement positions, with an indication of whether the spectrum at each position will be used (*good positions*) or excluded due to a poor SNR or strong PL background. This is an intermediate result and is saved in the folder `RaMap_results-{map_file_name}`.
+
+  <p align="center">
+    <img src="docs/RaMap_tutorial/Excludes_positions.png" width="600"/><br>
+    <em>Figure 4: .</em>
+  </p>
+
+  
   
