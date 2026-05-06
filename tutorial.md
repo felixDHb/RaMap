@@ -104,7 +104,7 @@ For the dataset used in this tutorial, all inputs are summarized in the table be
   In our example, the unit is micrometers, so we simply proceed by pressing ENTER.
 
 
-## 4 Selecting the Region of Interest
+## 5 Selecting the Region of Interest
 
 * In this step, the region of the Raman spectrum containing usable signals can be selected.  
   To do this, the following prompt must be answered:
@@ -114,7 +114,7 @@ For the dataset used in this tutorial, all inputs are summarized in the table be
   ```
   In our example, we select the range between 160 cm<sup>-1</sup> to 1400 cm<sup>-1</sup>.
 
-## 5 Display of the reference Raman spectra
+## 6 Display of the reference Raman spectra
 
 * After the input is completed, the baseline-corrected and min-max normalized reference spectra are displayed sequentially.  
   These windows can be closed easily.  
@@ -125,7 +125,7 @@ For the dataset used in this tutorial, all inputs are summarized in the table be
     <em>Figure 3: Window to display reference Raman spectrum of chromoxide.</em>
   </p>
 
-## 6 Setting threshold values
+## 7 Setting threshold values
 
 * Next, a prompt is started where the threshold for possible photoluminescence background (PL threshold) must be entered.
   ```
@@ -158,7 +158,7 @@ For the dataset used in this tutorial, all inputs are summarized in the table be
   
   In addition, a file called `Excluded_spectra.txt` is created in the folder `RaMap_results-Mapping_Large_02`, collecting all excluded spectra for later review in external programms.
   
-## 7 Intermediate images
+## 8 Intermediate images
 
 If the prompt from Step 3 was answered with `y`, additional intermediate results are now displayed, resulting from the Raman data analysis using Non-negative Factorization or Cosine similarity. All figures will be saved in the folder `RaMap_results-Mapping_Large_02`    
 Further information on this will follow.
@@ -200,7 +200,7 @@ This figure will be displayed for each of the stored reference phases.
   <em>Figure 9: This shows the phases that have the highest cosine similarity with the corresponding measured spectrum at each measurement point.</em>
 </p>
 
-## 8 Combination of Non-negative Matrix Factorization and Cosine Similarity into a Combined Score
+## 9 Combination of Non-negative Matrix Factorization and Cosine Similarity into a Combined Score
 
 The core aspect of RaMap is that the results from NMF and cosine similarity are combined to calculate a *Combined Score*, which is displayed for each phase from the database. This combined score is then used to construct phase mappings, visualizing the spatial distribution of the score and providing a measure of the likelihood that a phase is positively assigned.  <br>
 Since both Non-negative Matrix Factorization and Cosine Similarity have their weaknesses and artifacts may occur in the result interpretation, the phase identifications from both methods are first compared. If a phase is found by only one of the methods, this is considered an inconsistency, and the corresponding spectra are excluded from the phase mapping. <br>  
@@ -213,7 +213,7 @@ Next, the calculated Combined Scores are computed for each retained phase, and t
   <em>Figure 9: The calculated Combined Score for the assigned phase chromium oxide per spatial measurement point.</em>
 </p>
 
-## 9 Generation of the phase mappings
+## 10 Generation of the phase mappings
 Finally, the generated phase mappings are displayed and saved in the folder `RaMap_results-Mapping_Large_02`.  
 These mappings are created based on the Combined Score, and a smoothing algorithm is applied to generate a continuous spatial distribution.
 
