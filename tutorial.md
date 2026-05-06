@@ -93,6 +93,17 @@ For the dataset used in this tutorial, all inputs are summarized in the table be
   <br>
   If this option is answered with `n`, only the final phase maps will be generated and saved in `RaMap_results-Mapping_Large_02`.
 
+## 4 Set the spatial unit of the mapping
+
+* Next, you will be asked in which spatial unit the mappings were measured (e.g. mm, cm, etc.).  
+  If the data was measured in micrometers, this prompt can simply be confirmed by pressing ENTER without entering any value.
+  ```
+  Please enter the units of the mapping.
+  (Default is micrometer). Press Enter to use the default:
+  ```
+  In our example, the unit is micrometers, so we simply proceed by pressing ENTER.
+
+
 ## 4 Selecting the Region of Interest
 
 * In this step, the region of the Raman spectrum containing usable signals can be selected.  
@@ -207,6 +218,6 @@ Finally, the generated phase mappings are displayed and saved in the folder `RaM
 These mappings are created based on the Combined Score, and a smoothing algorithm is applied to generate a continuous spatial distribution.
 
 <p align="center">
-  <img src="docs/RaMap_tutorial/phase_map_chromiumoxide.png" width="800"/><br>
+  <img src="docs/RaMap_tutorial/phase_map_chromiumoxide.png" width="500"/><br>
   <em>Figure 10: The generated phase map of chromium oxide.</em>
 </p>
