@@ -54,9 +54,23 @@ In this step, select and open all reference files.
   Chemical formula: \alpha -Cr_2O_3
   Plot color (press Enter for system color): #D500D5
   ```
-  >:bulb:  Only string values are supported for color selection. 
-  See the [Matplotlib documentation](https://matplotlib.org/stable/users/explain/colors/colors.html#color-formats) for a list of available options.
+  >:bulb:  Only string values are supported for color selection. <br>
+  >| Parameter | Type   | Example Values           | Description                                                             |
+  >| --------- | ------ | ------------------------ | ----------------------------------------------------------------------- |
+  >| Plot color| string | red, blue, #FF0000 | Defines the color using a string. See [Matplotlib documentation](https://matplotlib.org/stable/users/explain/colors/colors.html#color-formats) for more options. |
 
-  >
   Pressing ENTER without specifying a color assigns a default system color. By default, the [Set1](https://matplotlib.org/stable/users/explain/colors/colormaps.html#qualitative) color palette is used.
+  
+The assignment of `Compound`, `Chemical formula`, and `Plot color` is repeated for each reference spectrum.
+For the dataset used in this tutorial, all inputs are summarized in the table below:
+
+| File   | Compound           | Chemical formula     |     Plot color                                                 |
+| --------- | ------ | ------------------------ | ----------------------------------------------------------------------- |
+| Cr2O3.txt | Chromoxide | \alpha -Cr_2O_3 | #D500D5 |
+| Fe2O3_Cr2O3.csv | Ironchromite | FeCr_2O_4 | #5E3C99 |
+| Hematite.txt | Hematite | \alpha -Fe_2O_3 | #9E0600 |
+| MgFe2O4.csv | Magnesioferrite | MgFe_2O_4 | #008000 |
+| MgO-Cr2O3.txt | Magnesiochromite | MgCr_2O_4 | #66CA7A |
+| NiCr2O4.txt | Nickelchromite | NiCr_2O_4 | #EE7600 |
+
 
