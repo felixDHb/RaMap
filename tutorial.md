@@ -107,3 +107,8 @@ For the dataset used in this tutorial, all inputs are summarized in the table be
 * After the input is completed, the baseline-corrected and min-max normalized reference spectra are displayed sequentially.  
   These windows can be closed easily.  
   The spectra represent intermediate results and are saved in the folder `RaMap_results-{map_file_name}`.
+
+  <p align="center">
+    <img src="docs/RaMap_tutorial/window_reference_spectrum_chromoxide.png" width="600"/><br>
+    <em>Figure 3: Window to display reference Raman spectrum of chromoxide.</em>
+  </p>
