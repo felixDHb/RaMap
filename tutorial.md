@@ -149,7 +149,7 @@ For the dataset used in this tutorial, all inputs are summarized in the table be
   Here, we use a value of `3`, which corresponds to an accepted rule of thumb.  <br>
   
   More detailed information will follow.
-<br>
+
 >:bulb: Guidance on threshold values for the two example mappings *MgO_steel_SPS_preox_Mapping_Large_01.csv* and *Mapping_Large_02.csv* is provided in a [TXT](Tutorial_Raman_data/Mappings/recommended_parameters_for_mapping_evaluation_by_RaMap.txt) file.
 > 
 <br>
