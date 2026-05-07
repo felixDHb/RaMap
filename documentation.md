@@ -41,9 +41,12 @@ The expected data structure is as follows:
 		   python3 RaMap.py
 
 ### Import Raman data
+#### Raman mapping file
  After the script is executed, a window opens in which the Raman mapping file is selected.
-&nbsp;
+
+#### Raman reference spectra
   Next, another window opens where the Raman reference files can be selected. It is recommended to store all reference files in a single folder and select them together to open.
+  
 ### User inputs and outputs
 
   ```
