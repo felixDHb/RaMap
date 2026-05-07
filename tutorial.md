@@ -90,7 +90,7 @@ For the dataset used in this tutorial, all inputs are summarized in the table be
   Do you want to view and save intermediate results as .png images? (y/n): y
   ```
 
-  RaMap provides the option to display and save *intermediate results* that are used for generating phase mappings. These results are briefly discussed in the steps ... bnis ... <br>
+  RaMap provides the option to display and save *intermediate results* that are used for generating phase mappings. These results are briefly discussed in the steps 6 to 9 <br>
   If this option is confirmed with `y`, all intermediate images will be displayed and saved sequentially. They can be found in the folder `RaMap_results-Mapping_Large_02`, which is generated and located in the same directory as the Raman mapping file. <br>
   <br>
   If this option is answered with `n`, only the final phase maps will be generated and saved in `RaMap_results-Mapping_Large_02`.
