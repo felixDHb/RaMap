@@ -55,7 +55,7 @@ The expected data structure is as follows:
 	Plot color: color
 	```
  * The *chemical formula* must be entered in LaTeX format.
- * The plot color only accepts string values representing colors (e.g. red, blue or hexadecimal colors).
+ * The *plot color* only accepts string values representing colors (e.g. red, blue or hexadecimal colors).
   This process is repeated for each imported reference spectrum. The information `raman_shifts` and `intensities` are extracted from the files. Together with the entered information, an internal dictionary is created with the following structure:
 
   	```
@@ -71,7 +71,7 @@ The expected data structure is as follows:
 
  If the same mapping file is loaded again in Raman, the script will access the existing JSON file and retrieve all relevant information for the references.
 
- If any changes are made to the references, they can be updated directly in the JSON file. Alternatively, the JSON file can be removed from the folder, in which case the procedure must be repeated.s
+ If any changes are made to the references, they can be updated directly in the JSON file. Alternatively, the JSON file can be removed from the folder, in which case the procedure must be repeated.
 
 ```
      Do you want to save intermediate results as .png images? (y/n):
