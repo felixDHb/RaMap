@@ -67,7 +67,7 @@ The expected data structure is as follows:
         }
 	```
  &nbsp;
- The dictionary only needs to be created once for a Raman mapping file. After the information has been entered, a JSON file named _dict_ref"".json_ is generated and saved in the same folder as the Raman mapping file.
+The dictionary only needs to be created once for a Raman mapping file. After the information has been entered, a JSON file named _dict_ref"".json_ is generated and saved in the same folder as the Raman mapping file.
 
  If the same mapping file is loaded again in Raman, the script will access the existing JSON file and retrieve all relevant information for the references.
 
