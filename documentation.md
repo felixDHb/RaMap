@@ -49,11 +49,11 @@ The expected data structure is as follows:
 
  After successful import, the terminal prompts for necessary information about each reference. This includes:
 
-	```
+```
 	Compound: compound_key
 	Chemical formula: chemical_formula
 	Plot color: color
-	```
+```
  * The *chemical formula* must be entered in LaTeX format.
  * The *plot color* only accepts string values representing colors (e.g. red, blue or hexadecimal colors).
   This process is repeated for each imported reference spectrum. The information `raman_shifts` and `intensities` are extracted from the files. Together with the entered information, an internal dictionary is created with the following structure:
