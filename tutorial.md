@@ -2,6 +2,8 @@
 
 This tutorial is intended to guide the application of RaMap. It provides a step-by-step instruction and demonstrates its use through the example Raman mapping dataset *Mapping_Large_02.csv*.
 
+For more detailed information and explanations regarding the inputs and messages in Raman mapping, please refer to the official [documentation](documentation.md).
+
 At the beginning, it should be checked whether all rerquired python packages are installed. Please refer to the [readme](README.md#Requirements) file for details.
 
 ## 1 Run the script
