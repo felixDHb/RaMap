@@ -36,59 +36,14 @@ The expected data structure is as follows:
 2. **Second column:** Raman intensities  
 
 ## Usage
-### Getting started
-1. Place your Raman `.csv` or `.txt` files in the `data/` directory before running the workflow.
-2. Add necessary components to the `RaMap.py` script 
-
-	a) Path to the Raman mapping file
-
-		   map_file = data/Raman_mapping.<ext>
-  
-	
-	b) Paths to the reference spectra and assigning names
-
-		   ref1_path = data/reference_spectrum1.<ext>
-		   ref2_path = data/reference_spectrum2.<ext>
-
-
-     You can add more references as needed.
-
-	c) The references are stored in a dictionary. Each entry corresponds to a reference and contains the following fields:
-      ```python
-			dict_ref = {
-        "ref1":{
-        "ref_shifts":load_ref(ref1_path)[0],   
-        "ref_spectrum":load_ref(ref1_path)[1],
-        "plot color":"",
-        "chemical formula":""
-        },
-				"ref2":{ ... },
-					...
-			} 
-      ```
-      
-      How to use:
-   
-      1. Each reference in the dictionary should be named according to the material it represents, rather than using generic keys like `ref1`.  
-      2. Update "plot color" with a color string (e.g., "red") for plotting.
-      3. Optionally, fill "chemical formula" with the chemical formula of the phase.
-      4. Add additional references by creating new keys ("ref2", "ref3", …) following the same format.
-   
-      The corresponding Raman spectrum from the directory `ref1_path` is stored in:
-  	  - **ref_shifts**: Wavenumbers  
-      - **ref_spectrum**: Raman intensities
-        
-      These values are automatically loaded when the script runs.
-
-    d) Path to save the result images
-
-		   path_results = data/
-       
-
-3. Run the script
+### Run the script
 
 		   python3 RaMap.py
 
+### Import Raman data
+ After the script is executed, a window opens in which the Raman mapping file is selected.
+&nbsp;
+  Next, another window opens where the Raman reference files can be selected. It is recommended to store all reference files in a single folder and select them together to open.
 ### User inputs and outputs
 
   ```
@@ -111,7 +66,13 @@ The expected data structure is as follows:
      Output:
 
 							Saved Phase mapping "".png
+ &nbsp;
 
+  ```
+    Please enter the units of the mapping. (Default is micrometer). Press Enter to use the default:
+  ```
+  The script asks for the units of the spatial resolution of the Raman mapping. The `default` is micrometer (µm), which can be accepted by simply pressing _Enter_. Other possible units include `cm`, `mm`, or `nm`, depending on the units in which the mapping position data are stored. 
+  
  &nbsp;
  
   ```
@@ -132,26 +93,7 @@ The expected data structure is as follows:
   It gives the intensity ratio between the maximum Raman peak (baseline-corrected spectrum) and the PL background.
   There is no universally valid value for the PL (photoluminescence) threshold, so this parameter should be tested and adjusted for your specific dataset.
   The value is usually above 0.8.
-  If no PL should be considered, set the value to 0.  
-
-  &nbsp;
-
-  ```
-    Should a sample spectrum from the mapping be plotted? If yes, please enter the coordinates in the following format: x,y. If not, please type None.
-  ```
-  ```None```: Skipping sample spectrum plot. 
-  
-  ```x_value,y_value ```: The positions are temporarily stored, and a sample spectrum from these positions is plotted after the request for the unit of the mapping. Saved as _Sample spectrum.png_. 
-         Output:
-
-    							Saved Sample spectrum.png
-
-&nbsp;
-
-  ```
-    Please enter the units of the mapping. (Default is micrometer: $\mu$m). Press Enter to use the default:
-  ```
-  The script asks for the units of the spatial resolution of the Raman mapping. The `default` is micrometer (µm), which can be accepted by simply pressing _Enter_. Other possible units include `cm`, `mm`, or `nm`, depending on the units in which the mapping position data are stored.  
+  If no PL should be considered, set the value to 0.   
 
 &nbsp;
 
@@ -266,9 +208,6 @@ The expected data structure is as follows:
 
 &nbsp;
 
-
-
-
 ```
   Please enter a value for the PL threshold. (Set 0 if no PL should be considered):
 ```
@@ -286,15 +225,6 @@ The expected data structure is as follows:
   The entered SNR threshold is not valid.
   It must be a positive number greater than zero.  
   Please provide a valid SNR threshold.
-
-&nbsp;
-
-```
-Should a sample spectrum from the mapping be plotted? If yes, please enter the coordinates in the following format: x,y. If not, please type None.
-```
-  ```Plotting of sample spectrum skipped. Coordinates not found in data.```
-  The specified coordinates for the sample spectrum do not exist in the mapping data.  
-  Please check the input coordinates and ensure they correspond to positions within the Raman mapping.
 
 &nbsp;
 
