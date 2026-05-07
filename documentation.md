@@ -45,13 +45,37 @@ The expected data structure is as follows:
  After the script is executed, a window opens in which the Raman mapping file is selected.
 
 #### Raman reference spectra
-  Next, another window opens where the Raman reference files can be selected. It is recommended to store all reference files in a single folder and select them together to open.
-  
-### User inputs and outputs
+ Next, another window opens where the Raman reference files can be selected. It is recommended to store all reference files in a single folder and select them together to open.
 
-  ```
+ After successful import, the terminal prompts for necessary information about each reference. This includes:
+
+	```
+	Compound: compound_key
+	Chemical formula: chemical_formula
+	Plot color: color
+	```
+ * The *chemical formula* must be entered in LaTeX format.
+ * The plot color only accepts string values representing colors (e.g. red, blue or hexadecimal colors).
+  This process is repeated for each imported reference spectrum. The information `raman_shifts` and `intensities` are extracted from the files. Together with the entered information, an internal dictionary is created with the following structure:
+
+  	```
+	        dict_ref[compound_key] = {
+            "ref_shifts": raman_shifts,
+            "ref_spectrum": intensities,
+            "chemical formula": f"${chemical_formula}$",      
+            "plot color": color
+        }
+	```
+ &nbsp;
+ The dictionary only needs to be created once for a Raman mapping file. After the information has been entered, a JSON file named _dict_ref"".json_ is generated and saved in the same folder as the Raman mapping file.
+
+ If the same mapping file is loaded again in Raman, the script will access the existing JSON file and retrieve all relevant information for the references.
+
+ If any changes are made to the references, they can be updated directly in the JSON file. Alternatively, the JSON file can be removed from the folder, in which case the procedure must be repeated.s
+
+```
      Do you want to save intermediate results as .png images? (y/n):
-   ```
+```
 
    ```y```: The workflow generates and saves multiple intermediate results. These outputs help to:
    - Improve the traceability of the workflow
