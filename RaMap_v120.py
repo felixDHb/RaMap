@@ -34,8 +34,8 @@ from tkinter.filedialog import askopenfilename, askopenfilenames
 # Load mapping file
 # ======================
 
-def load_file(dpath):
-    '''
+'''def load_file(dpath):
+    
     Loads the given mapping dataset.
     Determines whether the file is in CSV or TXT format and processes it accordingly.
     Extracts the necessary information as return values:
@@ -44,7 +44,7 @@ def load_file(dpath):
         - x_positions and y_positions ... the x and y coordinates of the measured spectra; found in the first and second columns, respectively
         - raman_spectra ... the Raman intensities of the measured spectra; found row-wise starting from the second row; 
                             each intensity is associated with a specific x and y value (in the same row)
-    '''
+    
 
     if not os.path.isfile(dpath):
         raise FileNotFoundError(f"File '{dpath}' was not found.")   
@@ -87,7 +87,87 @@ def load_file(dpath):
             print(f"Error when reading as .txt: {e}")
 
     raise ValueError(f"Unknown or unsupported file type: {mime}")
+'''
+def load_file(dpath):
+    """
+    Loads the given mapping dataset.
+    Determines whether the file is in CSV or TXT format and processes it accordingly.
+    Extracts the necessary information as return values:
 
+        - raman_shifts ... wavenumbers of the Raman spectrum; found in the first row
+        - x_positions and y_positions ... the x and y coordinates of the measured spectra; found in the first and second columns, respectively
+        - raman_spectra ... the Raman intensities of the measured spectra; found row-wise starting from the second row; 
+                            each intensity is associated with a specific x and y value (in the same row)
+    """
+
+    if not os.path.isfile(dpath):
+        raise FileNotFoundError(f"File '{dpath}' was not found.")   
+    
+    mime = magic.from_file(dpath, mime=True)
+    _, endung = os.path.splitext(dpath)
+    endung = endung.lower()
+
+    # -------------------- CSV --------------------
+    if "csv" in mime or endung == ".csv":
+        try:
+            df = pd.read_csv(dpath, header=None, delimiter=';')
+            data_r = df.iloc[1:, :].copy()
+
+            # Extract X and Y
+            x_positions_raw = data_r.iloc[:, 0].to_numpy(dtype=float)
+            y_positions_raw = data_r.iloc[:, 1].to_numpy(dtype=float)
+
+            # Check third column
+            third_col = data_r.iloc[:, 2].to_numpy(dtype=float)
+            if (third_col.max() - third_col.min()) <1e-2 :   # Z column is effectively constant (2D mapping) with small tolerance for numerical fluctuations
+                # Treat as Z coordinates -> ignore
+                raman_spectra_raw = data_r.iloc[:, 3:].to_numpy(dtype=float)
+                raman_shifts_raw = df.iloc[0, 3:].to_numpy(dtype=float)
+                print("Third column detected as Z coordinates, ignored in Raman spectra.")
+            else:
+                # Third column is Raman data
+                raman_spectra_raw = data_r.iloc[:, 2:].to_numpy(dtype=float)
+                raman_shifts_raw = df.iloc[0, 2:].to_numpy(dtype=float)
+                print("Third column detected as Raman data.")
+
+            print(f"{dpath} (.csv) file successfully loaded.")
+            return raman_shifts_raw, x_positions_raw, y_positions_raw, raman_spectra_raw
+
+        except Exception as e:
+            print(f"Error when reading as .csv: {e}")
+
+    # -------------------- TXT --------------------
+    if "text" in mime or endung == ".txt":
+        try:
+            with open(dpath, 'r', encoding='latin1') as f:
+                header = f.readline().strip().split()
+                raman_shifts_raw = np.array(header, dtype=float)
+
+            data = np.loadtxt(dpath, skiprows=1)
+            x_positions_raw = data[:, 0].astype(float)
+            y_positions_raw = data[:, 1].astype(float)
+
+            # Check third column
+            if data.shape[1] > 2:
+                third_col = data[:, 2]
+                if (third_col.max() - third_col.min()) <1e-2 :   # Z column is effectively constant (2D mapping) with small tolerance for numerical fluctuations
+                    raman_spectra_raw = data[:, 3:]
+                    raman_shifts_raw = raman_shifts_raw[3:]
+
+                else:
+                    raman_spectra_raw = data[:, 2:]
+                    raman_shifts_raw = raman_shifts_raw[2:]
+
+            else:
+                raman_spectra_raw = data[:, 2:]  # in case only X, Y + Raman starts immediately
+
+            print(f"{dpath} (.txt) file successfully loaded.")
+            return raman_shifts_raw, x_positions_raw, y_positions_raw, raman_spectra_raw
+
+        except Exception as e:
+            print(f"Error when reading as .txt: {e}")
+
+    raise ValueError(f"Unknown or unsupported file type: {mime}")
 
 Tk().withdraw()
 
@@ -144,7 +224,9 @@ def load_ref(reference, delimiter=None):
     raise ValueError(f"Unknown or unsupported file type: {mime}")
 
 
-###
+# ============================================
+# Dictionary of reference spectra
+# ============================================
 
 if os.path.isfile(os.path.join(map_folder_path, f"dict_ref_{map_file_name}.json")):
 
@@ -184,7 +266,7 @@ else:
             color = plt.get_cmap(system_color)(i % 9) 
         
         else:
-            # HEX (z. B. #9E0600)
+            # HEX 
             if color_desc.startswith("#"):
                 color = color_desc
 
@@ -218,7 +300,6 @@ else:
 
 #################################################################################################################################################################
 
-
 # ======================
 # Some more functions
 # ======================
@@ -250,9 +331,6 @@ def Save_Figure(filename, decision):
             print(f"Saved {filename}.png")
     else:
         plt.close()
-
-
-
 
 # Function for customized ticks for spatial map
 def custom_ticks(x, pos):
@@ -323,7 +401,7 @@ unit_input = input("\n Please enter the units of the mapping.\n"
 
 ## Provide a default value if no input is given
 if unit_input == "":
-   unit = "$\mu$m" # micrometer in Latex notation
+   unit = r"$\mu$m" # micrometer in Latex notation
 
 ## Set the unit to the user-provided string (e.g. mm, cm, nm)
 else:
