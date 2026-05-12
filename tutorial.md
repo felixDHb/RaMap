@@ -7,6 +7,7 @@ For more detailed information and explanations regarding the inputs and messages
 At the beginning, it should be checked whether all rerquired python packages are installed. Please refer to the [readme](README.md#Requirements) file for details.
 
 ## 1 Run the script
+Information will follow..
 
 ## 2 Import the Raman data
 ### Load Raman Mapping File
