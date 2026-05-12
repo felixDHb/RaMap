@@ -12,7 +12,7 @@ Information will follow..
 ## 2 Import the Raman data
 ### Load Raman Mapping File
 
-* After executing the script [RaMap.py](RaMap.py), a file explorer window will open.
+* After executing the script, a file explorer window will open.
   Use this window to select the Raman mapping dataset.
 
   <p align="center">
