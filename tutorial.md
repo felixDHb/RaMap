@@ -5,21 +5,37 @@ This tutorial is intended to guide the application of RaMap. It provides a step-
 For more detailed information and explanations regarding the inputs and messages, please refer to the official [documentation](documentation.md).
 
 
-## 1. Run the Script
+## 1. Use the Script
 
+### Clone the GitHub repository
+
+1. Open the **Anaconda Prompt**.
+2. Wechsel in den ordner, in dem Ramap lokal gespeichert werden soll:
+   ```powershell
+   cd C:\Users\path-to\RaMap
+   ```
+3. Clone the repository:
+   ```powershell
+   git clone https://github.com/Benutzername/RaMap.git
+   ```
+4. wechsel in den projektordner
+   ```
+   cd RaMap
+   ```
+   
 ### Create an environment
 
 To avoid conflicts with other Python environments and already installed packages, it is recommended to create a dedicated Python environment.
 
-1. Open the **Anaconda Prompt**.
-2. Create a Python environment named `my_env`:
+
+1. Create a Python environment named `my_env`:
    ```powershell
    conda create --name my_env python=3.11
 
 * You can choose any name instead of `my_env`.
 * `python=3.11` is the minimum required version for RaMap.
 
-3. Activate the environment:
+2. Activate the environment:
    ```powershell
    conda activate my_env
    ```
