@@ -28,7 +28,7 @@ To avoid conflicts with other Python environments and already installed packages
 1. Open the **Anaconda Prompt**.
 2. Navigate to the folder where you want to store RaMap locally:
    ```powershell
-   cd C:\Users\path-to\RaMap
+   cd C:\Users\path-to
    ```
 3. Clone the repository:
    ```powershell
@@ -40,20 +40,11 @@ To avoid conflicts with other Python environments and already installed packages
    ```
 
 ### Install the necessary packages
-
-1. Navigate to the folder containing `requirements.txt`:
-   ```powershell
-   cd C:\path-to-requirements
-   ```
-2. Install all required packages:
    ```powershell
    pip install -r requirements.txt
    ```
 
 ### Run RaMap
-The RaMap Python script should be in the same folder as `requirements.txt`.
-If it is located elsewhere, navigate to the folder first using `cd`.
-<br>
 Run the script:
   ```powershell
   python RaMap_v120.py
