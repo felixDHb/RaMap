@@ -10,31 +10,30 @@ For more detailed information and explanations regarding the inputs and messages
 
 To avoid conflicts with other Python environments and already installed packages, it is recommended to create a dedicated Python environment.
 
-
-1. Create a Python environment named `my_env`:
+1. Open the **Anaconda Prompt**.
+2. Create a Python environment named `my_env`:
    ```powershell
    conda create --name my_env python=3.11
 
 * You can choose any name instead of `my_env`.
 * `python=3.11` is the minimum required version for RaMap.
 
-2. Activate the environment:
+3. Activate the environment:
    ```powershell
    conda activate my_env
    ```
 
 ### Clone the GitHub repository
 
-1. Open the **Anaconda Prompt**.
-2. Navigate to the folder where you want to store RaMap locally:
+1. Navigate to the folder where you want to store RaMap locally:
    ```powershell
    cd C:\Users\path-to
    ```
-3. Clone the repository:
+2. Clone the repository:
    ```powershell
    git clone https://github.com/felixDHb/RaMap.git
    ```
-4. Change into the project folder:
+3. Change into the project folder:
    ```powershell
    cd RaMap
    ```
