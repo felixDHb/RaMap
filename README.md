@@ -24,11 +24,9 @@ It is helpful to create a separate environment for this purpose.
 
 A step-by-step guide can be found in the [tutorial](tutorial.md).
 
-Instructions will follow.
-
 * Run the script
 
-		   python3 RaMap.py
+		   python RaMap.py
 
 ## License
 This project is licensed under the Apache License 2.0 
