@@ -2,12 +2,47 @@
 
 This tutorial is intended to guide the application of RaMap. It provides a step-by-step instruction and demonstrates its use through the example Raman mapping dataset *Mapping_Large_02.csv*.
 
-For more detailed information and explanations regarding the inputs and messages in Raman mapping, please refer to the official [documentation](documentation.md).
+For more detailed information and explanations regarding the inputs and messages, please refer to the official [documentation](documentation.md).
 
-At the beginning, it should be checked whether all rerquired python packages are installed. Please refer to the [readme](README.md#Requirements) file for details.
 
-## 1 Run the script
-Information will follow..
+## 1. Run the Script
+
+### Create an environment
+
+To avoid conflicts with other Python environments and already installed packages, it is recommended to create a dedicated Python environment.
+
+1. Open the **Anaconda Prompt**.
+2. Create a Python environment named `my_env`:
+   ```powershell
+   conda create --name my_env python=3.12
+
+* You can choose any name instead of `my_env`.
+* `python=3.12` is the minimum required version for RaMap.
+
+3. Activate the environment:
+   ```powershell
+   conda activate my_env
+   ```
+
+### Install the necessary packages
+
+1. Navigate to the folder containing `requirements.txt`:
+   ```powershell
+   cd C:\path-to-requirements
+   ```
+2. Install all required packages:
+   ```powershell
+   pip install -r requirements.txt
+   ```
+
+### Run RaMap
+The RaMap Python script should be in the same folder as `requirements.txt`.
+If it is located elsewhere, navigate to the folder first using `cd`.
+<br>
+Run the script:
+  ```powershell
+  python RaMap_v120.py
+  ```
 
 ## 2 Import the Raman data
 ### Load Raman Mapping File
