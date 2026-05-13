@@ -10,7 +10,7 @@ For more detailed information and explanations regarding the inputs and messages
 ### Clone the GitHub repository
 
 1. Open the **Anaconda Prompt**.
-2. Wechsel in den ordner, in dem Ramap lokal gespeichert werden soll:
+2. Navigate to the folder where you want to store RaMap locally:
    ```powershell
    cd C:\Users\path-to\RaMap
    ```
@@ -18,7 +18,7 @@ For more detailed information and explanations regarding the inputs and messages
    ```powershell
    git clone https://github.com/felixDHb/RaMap.git
    ```
-4. wechsel in den projektordner
+4. Change into the project folder:
    ```
    cd RaMap
    ```
