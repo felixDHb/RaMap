@@ -14,10 +14,10 @@ To avoid conflicts with other Python environments and already installed packages
 1. Open the **Anaconda Prompt**.
 2. Create a Python environment named `my_env`:
    ```powershell
-   conda create --name my_env python=3.12
+   conda create --name my_env python=3.11
 
 * You can choose any name instead of `my_env`.
-* `python=3.12` is the minimum required version for RaMap.
+* `python=3.11` is the minimum required version for RaMap.
 
 3. Activate the environment:
    ```powershell
