@@ -104,7 +104,14 @@ In this step, select and open all reference files.
   >| Plot color| string | red, blue, #FF0000 | Defines the color using a string. See [Matplotlib documentation](https://matplotlib.org/stable/users/explain/colors/colors.html#color-formats) for more options. |
 
   Pressing ENTER without specifying a color assigns a default system color. By default, the [Set1](https://matplotlib.org/stable/users/explain/colors/colormaps.html#qualitative) color palette is used.
-  
+
+> ⚠️ **Note:** This internal database only needs to be created once. It is then automatically saved as a `.json` file in the same directory as the Raman mapping file (in our case under *dict_ref_Mapping_Large_02.json*).
+> When the same mapping is processed again in the workflow, the system automatically accesses this JSON file and retrieves the required information.
+> 
+> If reference data changes (e.g., new entries are added or colors need to be updated), this can be done directly in the JSON file. Alternatively, the file can be removed from the directory, forcing it to be regenerated.
+>
+> If the JSON file is not found in the directory, the procedure must be repeated.
+<br>
 The assignment of `Compound`, `Chemical formula`, and `Plot color` is repeated for each reference spectrum.
 For the dataset used in this tutorial, all inputs are summarized in the table below:
 
@@ -117,13 +124,6 @@ For the dataset used in this tutorial, all inputs are summarized in the table be
 | MgO-Cr2O3.txt | Magnesiochromite | MgCr_2O_4 | #66CA7A |
 | NiCr2O4.txt | Nickelchromite | NiCr_2O_4 | #EE7600 |
 <br>
-
-> :bulb: This internal database only needs to be created once. It is then automatically saved as a `.json` file in the same directory as the Raman mapping file (in our case under *dict_ref_Mapping_Large_02.json*).
-> When the same mapping is processed again in the workflow, the system automatically accesses this JSON file and retrieves the required information.
-> 
-> If reference data changes (e.g., new entries are added or colors need to be updated), this can be done directly in the JSON file. Alternatively, the file can be removed from the directory, forcing it to be regenerated.
->
-> If the JSON file is not found in the directory, the procedure must be repeated.
 
 ## 3 Display and save intermediate results?
 
@@ -169,6 +169,8 @@ For the dataset used in this tutorial, all inputs are summarized in the table be
     <em>Figure 3: Window to display reference Raman spectrum of chromoxide.</em>
   </p>
 
+> ⚠️ **Note:** To continue, all output windows must be closed. 
+
 ## 7 Setting threshold values
 
 * Next, a prompt is started where the threshold for possible photoluminescence background (PL threshold) must be entered.
@@ -205,6 +207,8 @@ For the dataset used in this tutorial, all inputs are summarized in the table be
   <br>
   
   In addition, a file called `Excluded_spectra.txt` is created in the folder `RaMap_results-Mapping_Large_02`, collecting all excluded spectra for later review in external programms.
+
+  > ⚠️ **Note:** To continue, all output windows must be closed.
   
 ## 8 Intermediate images
 
@@ -233,6 +237,8 @@ This is based on the elbow algorithm, which is automatically executed in the bac
   <em>Figure 7: The Mean Squared Error between the Non-negative Factorization model and the measured Raman spectra per spatial measurment position.</em>
 </p>
 
+> ⚠️ **Note:** To continue, all output windows must be closed.
+
 ### Cosine Similarity
 
 <p align="center">
@@ -241,6 +247,8 @@ This is based on the elbow algorithm, which is automatically executed in the bac
 </p>
 
 This figure will be displayed for each of the stored reference phases.
+> ⚠️ **Note:** To continue, all output windows must be closed.
+> 
 <br>
 
 <p align="center">
@@ -261,6 +269,8 @@ Next, the calculated Combined Scores are computed for each retained phase, and t
   <em>Figure 9: The calculated Combined Score for the assigned phase chromium oxide per spatial measurement point.</em>
 </p>
 
+> ⚠️ **Note:** To continue, all output windows must be closed.
+
 ## 10 Generation of the phase mappings
 Finally, the generated phase mappings are displayed and saved in the folder `RaMap_results-Mapping_Large_02`.  
 These mappings are created based on the Combined Score, and a smoothing algorithm is applied to generate a continuous spatial distribution.
@@ -269,3 +279,5 @@ These mappings are created based on the Combined Score, and a smoothing algorith
   <img src="docs/RaMap_tutorial/phase_map_chromiumoxide.png" width="500"/><br>
   <em>Figure 10: The generated phase map of chromium oxide.</em>
 </p>
+
+> ⚠️ **Note:** To continue, all output windows must be closed. 
