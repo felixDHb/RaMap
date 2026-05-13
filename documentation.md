@@ -44,7 +44,7 @@ The expected data structure is as follows:
 
 RaMap includes a built-in process for spectral preprocessing, which performs **baseline correction** and **min-max intensity scaling**.
 
-RaMap does **not** provide an option for **cosmic ray removal**, as this feature is often already implemented automatically by the spectrometer software.  
+⚠️ RaMap does **not** provide an option for **cosmic ray removal**, as this feature is often already implemented automatically by the spectrometer software.  
 If this is not the case, the spectra should be preprocessed for cosmic rays beforehand.
 
 ## Usage
