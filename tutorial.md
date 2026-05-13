@@ -16,7 +16,7 @@ For more detailed information and explanations regarding the inputs and messages
    ```
 3. Clone the repository:
    ```powershell
-   git clone https://github.com/Benutzername/RaMap.git
+   git clone https://github.com/felixDHb/RaMap.git
    ```
 4. wechsel in den projektordner
    ```
