@@ -40,6 +40,13 @@ The expected data structure is as follows:
 1. **First column:** Wavenumbers 
 2. **Second column:** Raman intensities  
 
+## Preprocessing of the Raman data
+
+RaMap includes a built-in process for spectral preprocessing, which performs **baseline correction** and **min-max intensity scaling**.
+
+RaMap does **not** provide an option for **cosmic ray removal**, as this feature is often already implemented automatically by the spectrometer software.  
+If this is not the case, the spectra should be preprocessed for cosmic rays beforehand.
+
 ## Usage
 ### Run the script
 
