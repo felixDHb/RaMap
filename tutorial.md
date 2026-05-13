@@ -51,25 +51,25 @@ Run the script:
   ```
 
 ## 2 Import the Raman data
-### Load Raman Mapping File
+### Load Raman mapping file
 
 * After executing the script, a file explorer window will open.
   Use this window to select the Raman mapping dataset.
 
   <p align="center">
-    <img src="docs/RaMap_tutorial/explorer_load_mapping.jpg" width="600"/><br>
+    <img src="docs/RaMap_tutorial/explorer_load_mapping.png" width="600"/><br>
     <em>Figure 1: File selection window for Raman mapping data.</em>
   </p>
 
   Further information regarding supported file formats and required data structures can be found in the [documentation](documentation.md#input-data-format-raman-mapping).
 
-### Load Raman Reference Spectra
+### Load Raman reference spectra
 
 * Once the mapping dataset has been selected, a second window will appear for importing reference spectra.
 In this step, select and open all reference files.
 
   <p align="center">
-    <img src="docs/RaMap_tutorial/explorer_load_references.jpg" width="600"/><br>
+    <img src="docs/RaMap_tutorial/explorer_load_references.png" width="600"/><br>
     <em>Figure 2: File selection window for reference Raman spectra.</em>
   </p>
 
