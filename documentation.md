@@ -26,6 +26,11 @@ The expected data structure is as follows:
 
 Make sure that the file follows this structure so that the script can correctly read and process the mapping.
 
+The header does **not** require any specific naming.
+
+> ℹ️ If the Raman mapping data includes a third coordinate axis (Z-axis), as is sometimes provided by default in spectrometer software, this column usually does not contain relevant information. RaMap is designed for 2D xy mappings only.  
+> RaMap will automatically recognize and ignore the Z-axis column if it is present.
+
 ### Input Data Format Raman spectra for Reference Materials
 
 For the analysis of the Raman mapping data, reference spectra from reference materials are required and should be provided in `.csv` or `.txt` format.  
