@@ -6,23 +6,6 @@ For more detailed information and explanations regarding the inputs and messages
 
 
 ## 1. Use the Script
-
-### Clone the GitHub repository
-
-1. Open the **Anaconda Prompt**.
-2. Navigate to the folder where you want to store RaMap locally:
-   ```powershell
-   cd C:\Users\path-to\RaMap
-   ```
-3. Clone the repository:
-   ```powershell
-   git clone https://github.com/felixDHb/RaMap.git
-   ```
-4. Change into the project folder:
-   ```
-   cd RaMap
-   ```
-   
 ### Create an environment
 
 To avoid conflicts with other Python environments and already installed packages, it is recommended to create a dedicated Python environment.
@@ -38,6 +21,22 @@ To avoid conflicts with other Python environments and already installed packages
 2. Activate the environment:
    ```powershell
    conda activate my_env
+   ```
+
+### Clone the GitHub repository
+
+1. Open the **Anaconda Prompt**.
+2. Navigate to the folder where you want to store RaMap locally:
+   ```powershell
+   cd C:\Users\path-to\RaMap
+   ```
+3. Clone the repository:
+   ```powershell
+   git clone https://github.com/felixDHb/RaMap.git
+   ```
+4. Change into the project folder:
+   ```
+   cd RaMap
    ```
 
 ### Install the necessary packages
