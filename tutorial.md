@@ -35,7 +35,7 @@ To avoid conflicts with other Python environments and already installed packages
    git clone https://github.com/felixDHb/RaMap.git
    ```
 4. Change into the project folder:
-   ```
+   ```powershell
    cd RaMap
    ```
 
