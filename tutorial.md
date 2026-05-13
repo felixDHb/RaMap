@@ -9,7 +9,7 @@ For more detailed information and explanations regarding the inputs and messages
 ### Create an environment
 
 To avoid conflicts with other Python environments and already installed packages, it is recommended to create a dedicated Python environment. <br>
-We are using [Anaconda](https://www.anaconda.com/docs/getting-started/main) for Windows.
+We are using [Anaconda](https://www.anaconda.com/docs/getting-started/main).
 
 1. Open the **Anaconda Prompt**.
 2. Create a Python environment named `my_env`:
